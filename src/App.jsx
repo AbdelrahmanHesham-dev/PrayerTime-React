@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     const fetchPrayerTimes = async () =>{
       try{
-        const response = await fetch(`https:/api.aladhan.com/v1/timingsByCity?city=Eg&country=${city}`)
+        const response = await fetch(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=Eg`)
         const data_Prayer = await response.json()
 
         setPrayerTimes(data_Prayer.data.timings)
