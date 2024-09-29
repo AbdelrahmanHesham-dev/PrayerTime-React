@@ -1,4 +1,6 @@
-function prayer({ name, time }) {
+import PropTypes from "prop-types";
+
+function Prayer({ name, time }) {
   return (
     <div className="prayer">
       <p className="name_prayer">{name}</p>
@@ -7,4 +9,9 @@ function prayer({ name, time }) {
   );
 }
 
-export default prayer;
+Prayer.propTypes = {
+  name: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+};
+
+export default Prayer;
