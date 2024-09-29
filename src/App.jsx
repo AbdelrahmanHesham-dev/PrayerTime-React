@@ -4,15 +4,16 @@ import Prayer from "./Component/Prayer.jsx";
 function App() {
   const [prayerTimes, setPrayerTimes] = useState({});
   const [dateTime, setDateTime] = useState("");
-  const [city, setCity] = useState("Cairo");
+  const [city, setCity] = useState("القاهرة");
   const [country, setCountry] = useState("EG");
   const [cities, setCities] = useState([]);
 
   const countries = [
     { name: "مصر", code: "EG" },
+    { name: "فلسطين", code: "PS" },
     { name: "السعودية", code: "SA" },
-    { name: "الأردن", code: "JO" },
     { name: "الإمارات", code: "AE" },
+    { name: "الأردن", code: "JO" },
     { name: "العراق", code: "IQ" },
     { name: "المغرب", code: "MA" },
     { name: "تونس", code: "TN" },
@@ -56,12 +57,13 @@ function App() {
       "ديار المحرق",
       "بلد القديم",
     ],
+    PS: ["القدس", "غزة", "الخليل", "بيت لحم", "نابلس", "رام الله", "جنين"], 
   };
 
   useEffect(() => {
     const fetchCities = () => {
       setCities(citiesByCountry[country]);
-      setCity(citiesByCountry[country][0]); // تعيين المدينة الأولى كخيار افتراضي
+      setCity(citiesByCountry[country][0]);
     };
 
     fetchCities();
